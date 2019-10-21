@@ -26,6 +26,7 @@ class LastLogin extends Model
      * @var string
      */
     protected $table = 'llx_user';
+    public $timestamps = false;
 
     // whitelists the mass protected assignment fields.
     protected $fillable = [

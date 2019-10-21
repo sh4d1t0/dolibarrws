@@ -94,6 +94,10 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                <div>
+                    <?php $datetime = date_create()->format('Y-m-d H:i:s'); echo $datetime; ?>
+                </div>
             </div>
         </div>
     </body>
