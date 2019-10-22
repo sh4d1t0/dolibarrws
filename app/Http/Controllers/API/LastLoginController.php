@@ -68,8 +68,11 @@ class LastLoginController extends Controller
     {
         if (LastLogin::where('rowid', $id)->exists()) {
             $datelastlogin = date_create()->format('Y-m-d H:i:s');
-            $login = LastLogin::where('rowid', $id)->update(['datelastlogin' => $datelastlogin]);
-            
+            // $datepreviouslogin = LastLogin::select('datelastlogin')->where('rowid', $id)->get();
+
+
+            LastLogin::where('rowid', $id)->update(['datelastlogin' => $datelastlogin]);
+
             return response()->json([
                 'error' => false,
                 'message' => 'Updated the Last login access for current user',
