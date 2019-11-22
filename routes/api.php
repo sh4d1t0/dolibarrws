@@ -31,6 +31,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'v1','namespace' => 'API'], function(){
     Route::apiResource('holidays', 'HolidayHistoryController');
     Route::apiResource('last-login', 'LastLoginController');
+    Route::apiResource('vacations', 'VacationsController');
 
     /* Route::group(['prefix' => 'holidays'],function(){
         Route::get('/{id}/history',[
