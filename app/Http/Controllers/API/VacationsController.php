@@ -15,7 +15,7 @@ class VacationsController extends Controller
      */
     public function index()
     {
-        $vacations = Vacations::all();
+        $vacations = Vacations::all()->reverse();
 
         return response()->json([
             'error' => false,
@@ -43,7 +43,7 @@ class VacationsController extends Controller
     public function show($id)
     {
         if (Vacations::where('fk_user', $id)->exists()) {
-            $vacations_user = Vacations::where('fk_user', $id)->get();
+            $vacations_user = Vacations::where('fk_user', $id)->orderBy('rowid', 'desc')->get();
 
             return response()->json([
                 'error' => false,
